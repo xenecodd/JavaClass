@@ -1,14 +1,45 @@
+import javax.swing.*;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
 
-        System.out.printf("Hello and welcome! \n");
-        int negative = -2147483648;
+        long negative = -2147483648; // integer literallerin sınırını aştığı için math.abs negatif çıktı veriyordu
+                                     // fakat long tipi literallerin sınırı daha geniş olduğundan pozitif çıktı veriyor.
 
         System.out.println(Math.abs(negative));
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("i = " + i);
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Merhaba");
         }
+
+// String değişkeni olarak girdi almak
+        String input1 = JOptionPane.showInputDialog("Birinci sayıyı girin:");
+        String input2 = JOptionPane.showInputDialog("İkinci sayıyı girin:");
+        String operator = JOptionPane.showInputDialog("Yapmak istediğiniz işlemin sembolünü giriniz:");
+
+// Girdileri integer tipine çevirme
+        char opt = operator.charAt(0); // İşlem sembolünü al
+        int num1 = Integer.parseInt(input1); // İlk sayıyı tamsayıya çevir
+        int num2 = Integer.parseInt(input2); // İkinci sayıyı tamsayıya çevir
+        int msg = 0; // Sonucu saklamak için değişken
+
+// İşlem sembolüne göre işlemi yap
+        if (opt == '+') {
+            msg = Math.addExact(num1, num2); // Toplama işlemi
+        } else if (opt == '-') {
+            msg = Math.subtractExact(num1, num2); // Çıkarma işlemi
+        } else if (opt == '*') {
+            msg = Math.multiplyExact(num1, num2); // Çarpma işlemi
+        } else if (opt == '/') {
+            msg = Math.divideExact(num1, num2); // Bölme işlemi
+        } else {
+            JOptionPane.showMessageDialog(null, "Geçersiz işlem sembolü", "Hata", JOptionPane.ERROR_MESSAGE);
+            System.exit(0); // Hata durumunda programı sonlandır
+        }
+
+// Alınan girdiyi kullanıcıya göster
+        JOptionPane.showMessageDialog(null, msg);
+
     }
 }
