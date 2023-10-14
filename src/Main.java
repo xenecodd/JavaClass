@@ -12,9 +12,18 @@ public class Main {
         Arrays.sort(arr);
         return arr[1];
     }
+
+    public static int signum(int a) {
+        int sign=-1;
+        if (a>0){
+            sign= 1;
+        } else if (a==0) {
+            sign=0;}
+        return sign;
+    }
     public static void main(String[] args) {
 
-        long negative = -2147483648; // integer literallerin sınırını aştığı için math.abs negatif çıktı veriyordu
+        /* long negative = -2147483648; // integer literallerin sınırını aştığı için math.abs negatif çıktı veriyordu
         // fakat long tipi literallerin sınırı daha geniş olduğundan pozitif çıktı veriyor.
 
         System.out.println(Math.abs(negative));
@@ -67,6 +76,70 @@ public class Main {
 // Parametresi ile aldığı int türden 3 sayıdan ortancasına geri dönen mid isimli metodu yazınız ve test ediniz.
         int result = Main.mid(5, 2, 7);
         System.out.println(result);
+
+//Parametresi ile aldığı int türden bir sayının negatif mi, 0(sıfır) mı, pozitif mi olduğunu test eden signum isimli
+// metodu yazınız ve test ediniz. Metot pozitif için 1(bir), negatif için -1(eksi bir) ve sıfır için 0(sıfır)döndürecektir.
+        int sign= Main.signum(5);
+        System.out.println(sign);
+
+         */
+        String hgt ="12"; //JOptionPane.showInputDialog("Yükseklik giriniz:");
+        String wdt ="4"; //JOptionPane.showInputDialog("Genişlik giriniz:");
+
+        int height= Integer.parseInt(hgt);
+        int width= Integer.parseInt(wdt);
+        int temp=0;
+        for (int i = 1; i <= height; i++) {
+            System.out.print(i);
+            System.out.print("|");
+            /*h=6 w=4
+            w-1-j  -->  0
+
+            |*   |  i=1 i=h  j=1         j=i-1       k=w-i k=1
+            | *  |  i=2 i=h  j=1         j=i-1       k=w-i k=1
+            |  * |  i=3 i=h  j=1         j=i-1       k=w-i k=1
+            |   *|  i=4 i=h  j=1         j=i-1       k=w-i k=1
+            |  * |  i=5 i=h  j=w-(i%w)-1 j=1         k=1 k=i%w
+            (int k = width-(i%width); k > 1; k--)
+            | *  |  i=6 i=h  j=w-(i%w)-1 j=1         k=1 k=i%w
+            |*   |  i=7 i=h  j=w-(i%w)-1 j=1         k=1 k=i%w
+            | *  |  i=8 i=h  j=1         j=w-(i%w)-2 k=i%w k=1
+            |  * |  i=9 i=h  j=1         j=w-(i%w)-2 k=i%w k=1
+            |   *|  i=10 i=h  j=1        j=w-(i%w)-2 k=i%w k=1
+            |  * |  i=11 i=h  j=1        j=w-(i%w)-2 k=i%w k=1
+
+            for (int j = 1; j <= i-1; j++) {
+                System.out.print(" ");
+                for(int k=width-i)
+            }
+             */
+            if ((i/width)%2==0) {
+                if(i%width!=1&i!=1){
+                    for (int j = 1; j < i % width; j++) {
+                        System.out.print(" ");
+                    }
+                }
+                System.out.print("*");
+                for (int k = width - (i % width); k >= 1; k--) {
+                    System.out.print(" ");
+                }
+            }else if((i/width)%2!=0){
+               if(i%width==0){
+                   temp=1;
+               }else{
+                   temp=0;
+               }
+                for (int j = 1; j <= width-(i % width)-temp; j++) {
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+                for (int k =(i % width); k > 1; k--) {
+                    System.out.print(" ");
+                }
+            }
+
+            System.out.println("|");
+        }
     }
 }
 
