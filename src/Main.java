@@ -1,9 +1,17 @@
 import javax.swing.*;
 import java.util.Arrays;
+import java.lang.System;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
+
+// Parametresi ile aldığı int türden 3 sayıdan ortancasına geri dönen mid isimli metodu yazınız ve test ediniz.
+    public static int mid(int a, int b, int c) {
+        int[] arr = {a, b, c};
+        Arrays.sort(arr);
+        return arr[1];
+    }
     public static void main(String[] args) {
 
         long negative = -2147483648; // integer literallerin sınırını aştığı için math.abs negatif çıktı veriyordu
@@ -56,11 +64,9 @@ public class Main {
 // Sıralanmış sayılar, ekrana küçükten büyüğe doğru sıralanmış şekilde yazdırılır.
         System.out.println(arr[0] + "<" + arr[1] + "<" + arr[2]);
 
-
-
-
-
-
+// Parametresi ile aldığı int türden 3 sayıdan ortancasına geri dönen mid isimli metodu yazınız ve test ediniz.
+        int result = Main.mid(5, 2, 7);
+        System.out.println(result);
     }
-
 }
+
