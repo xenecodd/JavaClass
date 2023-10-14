@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.Arrays;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -6,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         long negative = -2147483648; // integer literallerin sınırını aştığı için math.abs negatif çıktı veriyordu
-                                     // fakat long tipi literallerin sınırı daha geniş olduğundan pozitif çıktı veriyor.
+        // fakat long tipi literallerin sınırı daha geniş olduğundan pozitif çıktı veriyor.
 
         System.out.println(Math.abs(negative));
         for (int i = 1; i <= 10; i++) {
@@ -41,5 +42,25 @@ public class Main {
 // Alınan girdiyi kullanıcıya göster
         JOptionPane.showMessageDialog(null, msg);
 
+// Kullanıcıdan üç tamsayı girişi almak için JOptionPane kullanılır.
+        int a = Integer.parseInt(JOptionPane.showInputDialog("Birinci sayiyi girin:"));
+        int b = Integer.parseInt(JOptionPane.showInputDialog("Ikinci sayiyi girin:"));
+        int c = Integer.parseInt(JOptionPane.showInputDialog("Ucuncu sayiyi girin:"));
+
+// Kullanıcı girdileri int türünde değişkenlere dönüştürülür ve diziye atanır.
+        int[] arr = {a, b, c};
+
+// Girilen sayıları küçükten büyüğe sıralamak için Arrays.sort kullanılır.
+        Arrays.sort(arr);
+
+// Sıralanmış sayılar, ekrana küçükten büyüğe doğru sıralanmış şekilde yazdırılır.
+        System.out.println(arr[0] + "<" + arr[1] + "<" + arr[2]);
+
+
+
+
+
+
     }
+
 }
