@@ -32,7 +32,7 @@ public class Main {
     }
     public static void main(String[] args) {
 
-        /* long negative = -2147483648; // integer literallerin sınırını aştığı için math.abs negatif çıktı veriyordu
+       /*  long negative = -2147483648; // integer literallerin sınırını aştığı için math.abs negatif çıktı veriyordu
         // fakat long tipi literallerin sınırı daha geniş olduğundan pozitif çıktı veriyor.
 
         System.out.println(Math.abs(negative));
@@ -67,7 +67,7 @@ public class Main {
 
 // Alınan girdiyi kullanıcıya göster
         JOptionPane.showMessageDialog(null, msg);
-
+*/
 // Kullanıcıdan üç tamsayı girişi almak için JOptionPane kullanılır.
         int a = Integer.parseInt(JOptionPane.showInputDialog("Birinci sayiyi girin:"));
         int b = Integer.parseInt(JOptionPane.showInputDialog("Ikinci sayiyi girin:"));
@@ -78,12 +78,23 @@ public class Main {
 
 // Girilen sayıları küçükten büyüğe sıralamak için Arrays.sort kullanılır.
         Arrays.sort(arr);
+        System.out.print(arr[0]);
+        if (arr[0]<arr[1]) {
+            System.out.print("<");
+        }else{
+            System.out.print("=");
+        }
+        System.out.print(arr[1]);
+        if (arr[1]<arr[2]) {
+            System.out.print("<");
+        }else{
+            System.out.print("=");
+        }
+        System.out.print(arr[2]);
 
 // Sıralanmış sayılar, ekrana küçükten büyüğe doğru sıralanmış şekilde yazdırılır.
-        System.out.println(arr[0] + "<" + arr[1] + "<" + arr[2]);
-
 // Parametresi ile aldığı int türden 3 sayıdan ortancasına geri dönen mid isimli metodu yazınız ve test ediniz.
-        int result = Main.mid(5, 2, 7);
+       /* int result = Main.mid(5, 2, 7);
         System.out.println(result);
 
 //Parametresi ile aldığı int türden bir sayının negatif mi, 0(sıfır) mı, pozitif mi olduğunu test eden signum isimli
@@ -91,7 +102,7 @@ public class Main {
         int sign= Main.signum(5);
         System.out.println(sign);
 
-         */
+
         /*String hgt =JOptionPane.showInputDialog("Yükseklik giriniz:");
         String wdt =JOptionPane.showInputDialog("Genişlik giriniz:");
 
@@ -206,12 +217,12 @@ public class Main {
         }
          */
 
-            String number = JOptionPane.showInputDialog("Sayı giriniz:");// Kullanıcıdan bir sayı girmesini isteyen iletişim kutusu açılır
+           /* String number = JOptionPane.showInputDialog("Sayı giriniz:");// Kullanıcıdan bir sayı girmesini isteyen iletişim kutusu açılır
 
             long saniye = Long.parseLong(number); // Kullanıcının girdiği değer long türüne dönüştürülür
 
             displayDuration(saniye); // Kullanıcının girdiği değer long türüne dönüştürülür
-
+*/
 
     }
 
