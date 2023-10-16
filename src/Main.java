@@ -83,7 +83,7 @@ public class Main {
         System.out.println(sign);
 
          */
-        String hgt =JOptionPane.showInputDialog("Yükseklik giriniz:");
+        /*String hgt =JOptionPane.showInputDialog("Yükseklik giriniz:");
         String wdt =JOptionPane.showInputDialog("Genişlik giriniz:");
 
         int height= Integer.parseInt(hgt);
@@ -109,7 +109,7 @@ public class Main {
             |   * |  i=13 i=h  j=1        j=w-(i%w)-2 k=i%w k=1
             |  *  |  i=14 i=h  j=1        j=w-(i%w)-2 k=i%w k=1
 
-             */
+
             if ((i/width)%2==0) {
                 {
                     for (int j = 1; j <= i % width; j++) {
@@ -132,7 +132,35 @@ public class Main {
 
             System.out.print("|");
             System.out.println(i);
+        }*/
+
+        int[] arr = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+        int[] mull = new int[arr.length * 2];
+        int n = 30030;
+        int j = 0;
+
+// Asal bölenleri hesaplamak için döngü başlar
+        for (int i = 0; i < arr.length; i++) {
+            // Eğer n, mevcut asal sayıya bölünebiliyorsa
+            if (n % arr[j] == 0) {
+                // Bu asal sayıyı mull dizisine ekler
+                mull[i] = arr[j];
+                // n değerini bu asal sayıya böler
+                n = n / arr[j];
+            } else {
+                // n, mevcut asal sayıya bölünemiyorsa bir sonraki asal sayıya geçer
+                j = j + 1;
+            }
         }
+
+// mull dizisini dolaşarak sıfır olmayan değerleri yazdırır
+        for (int k = 0; k < mull.length; k++) {
+            if (mull[k] != 0) {
+                System.out.print(mull[k] + " ");
+            }
+        }
+
     }
+
 }
 
