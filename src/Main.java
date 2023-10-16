@@ -133,7 +133,7 @@ public class Main {
             System.out.print("|");
             System.out.println(i);
         }*/
-
+/*
         int[] arr = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
         int[] mull = new int[arr.length * 2];
         int n = 30030;
@@ -159,6 +159,44 @@ public class Main {
                 System.out.print(mull[k] + " ");
             }
         }
+*/
+        //12345*678901  1 1
+        //1234***78901
+        String number =JOptionPane.showInputDialog("Sayi giriniz:");
+
+        int n= Integer.parseInt(number);
+        int odd = 1; // İlk başta odd değişkeni 1 olarak başlatılır
+
+        for (int i = 1; i <= n; i++) {
+                for (int k = 1; k <= (n * 2 - odd) / 2; k++) {
+                    System.out.print(" ");
+                }
+                for (int s = 1; s <= odd; s++) {
+                    System.out.print("*");
+                }
+                for (int k = 1; k <= (n * 2 - odd) / 2; k++) {
+                    System.out.print(" ");
+                }
+                System.out.println(" ");
+            odd += 2;
+        }
+        odd-=2;
+        for (int i = 1; i <= n; i++) {
+            odd-=2;
+            for (int k = 1; k <= (n * 2 - odd) / 2; k++) {
+                System.out.print(" ");
+            }
+            for (int s = 1; s <= odd; s++) {
+                System.out.print("*");
+            }
+            for (int k = 1; k <= (n * 2 - odd) / 2; k++) {
+                System.out.print(" ");
+            }
+            System.out.println(" ");
+        }
+
+
+
 
     }
 
