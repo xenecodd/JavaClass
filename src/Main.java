@@ -13,6 +13,7 @@ public class Main {
         return arr[1];
     }
 
+
     public static int signum(int a) {
         int sign=-1;
         if (a>0){
@@ -20,6 +21,14 @@ public class Main {
         } else if (a==0) {
             sign=0;}
         return sign;
+    }
+    private static void displayDuration(long saniye) {
+        int saat = (int) (saniye / 3600); // Saat hesaplanır
+        int dakka = (int) ((saniye % 3600) / 60); // Dakika hesaplanır
+        int saniye1 = (int) (saniye % 60); // Saniye hesaplanır
+        if (saat == 0 && dakka == 0 && saniye1 == 0) { // Eğer saat, dakika ve saniye değeri sıfırsa
+            System.out.println("Baska bir deger giriniz"); // Kullanıcıya yeni bir değer girmesi gerektiğini bildirir
+        }else{System.out.println("Saat: " + saat + "\nDakika: " + dakka + "\nSaniye: " + saniye1);};// Zamanı ekrana yazdırır
     }
     public static void main(String[] args) {
 
@@ -162,6 +171,7 @@ public class Main {
 */
         //12345*678901  1 1
         //1234***78901
+        /*
         String number =JOptionPane.showInputDialog("Sayi giriniz:");
 
         int n= Integer.parseInt(number);
@@ -194,8 +204,13 @@ public class Main {
             }
             System.out.println(" ");
         }
+         */
 
+            String number = JOptionPane.showInputDialog("Sayı giriniz:");// Kullanıcıdan bir sayı girmesini isteyen iletişim kutusu açılır
 
+            long saniye = Long.parseLong(number); // Kullanıcının girdiği değer long türüne dönüştürülür
+
+            displayDuration(saniye); // Kullanıcının girdiği değer long türüne dönüştürülür
 
 
     }
